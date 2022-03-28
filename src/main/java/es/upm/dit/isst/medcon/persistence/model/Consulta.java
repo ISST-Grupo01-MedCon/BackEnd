@@ -11,44 +11,100 @@ public class Consulta implements Serializable{
     private Integer id;
     private String fecha;
     private String especialidad;
-    private Integer medicoId;
-    private Integer salaConsultadId;
-    private Integer salaEsperadId;
+    private Integer medico;
+    private Integer salaConsulta;
+    private Integer salaEspera;
+    private String paciente;
+    private String razonConsulta;
+    private String ticketId;
 
-    public Integer getId(){
-        return id;
+    public Consulta(){}
+    public Consulta(Integer id, String fecha, String especialidad, Integer medico, Integer salaConsulta, Integer salaEspera, String paciente, String razonConsulta, String ticketId){
+        this.id = id;
+        this.fecha = fecha;
+        this.especialidad = especialidad;
+        this.medico = medico;
+        this.salaConsulta = salaConsulta;
+        this.salaEspera = salaEspera;
+        this.paciente = paciente;
+        this.razonConsulta = razonConsulta;
+        this.ticketId = ticketId;
     }
-    public void setId(Integer id){
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
     }
-    public String getFecha(){
-        return fecha;
+
+    public String getFecha() {
+        return this.fecha;
     }
-    public void setFecha(String fecha){
+
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-    public String getEspecialidad(){
-        return especialidad;
+
+    public String getEspecialidad() {
+        return this.especialidad;
     }
-    public void setEspecialidad(String especialidad){
+
+    public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
-    public Integer getMedicoId(){
-        return medicoId;
+
+    public Integer getMedico() {
+        return this.medico;
     }
-    public void setMedicoId(Integer medicoId){
-        this.medicoId = medicoId;
+
+    public void setMedico(Integer medico) {
+        this.medico = medico;
     }
-    public Integer getSalaConsultaId(){
-        return salaConsultadId;
+
+    public Integer getSalaConsulta() {
+        return this.salaConsulta;
     }
-    public void setSalaConsultaId(Integer salaConsultaId){
-        this.salaConsultadId = salaConsultaId;
+
+    public void setSalaConsulta(Integer salaConsulta) {
+        this.salaConsulta = salaConsulta;
     }
-    public Integer getSalaEsperaId(){
-        return salaEsperadId;
+
+    public Integer getSalaEspera() {
+        return this.salaEspera;
     }
-    public void setSalaEsperaId(Integer salaEsperaId){
-        this.salaEsperadId = salaEsperaId;
+
+    public void setSalaEspera(Integer salaEspera) {
+        this.salaEspera = salaEspera;
     }
+
+    public String getPaciente() {
+        return this.paciente;
+    }
+
+    public void setPaciente(String paciente) {
+        this.paciente = paciente;
+    }
+
+    public String getRazonConsulta() {
+        return this.razonConsulta;
+    }
+
+    public void setRazonConsulta(String razonConsulta) {
+        this.razonConsulta = razonConsulta;
+    }
+
+    public String getTicketId() {
+        return this.ticketId;
+    }
+
+    public void setTicketId(String ticketId) {
+        this.ticketId = ticketId;
+    }
+
+
+
+
+
 }
