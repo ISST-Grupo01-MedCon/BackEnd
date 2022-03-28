@@ -15,6 +15,25 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import es.upm.dit.isst.medcon.persistence.repository.MedconRepository;
+import es.upm.dit.isst.medcon.persistence.model.Consulta;
+import es.upm.dit.isst.medcon.persistence.model.Medico;
+
+@RestController
 public class MedconController {
+    private final MedconRepository medconRepository;
+    public static final Logger log = LoggerFactory.getLogger(MedconController.class);
+    public MedconController(MedconRepository t) {
+        this.medconRepository = t;
+    }
+    @GetMapping("/consultas")
+    List<Consulta> readAll(){
+        return (List<Consulta>) medconRepository.findAll();
+    }
+    //@PostMapping("/consultas/{id}")Para implementar el texto de la consulta ???
     
+    
+
+
+
 }
