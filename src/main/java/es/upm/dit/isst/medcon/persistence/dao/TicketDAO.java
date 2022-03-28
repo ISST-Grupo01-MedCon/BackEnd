@@ -1,6 +1,7 @@
-package es.upm.dit.isst.persistence.dao;
+package es.upm.dit.isst.medcon.persistence.dao;
 
 import java.util.Collection;
+import es.upm.dit.isst.medcon.persistence.model.Ticket;
 
 public interface TicketDAO{
 
