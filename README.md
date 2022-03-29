@@ -11,7 +11,7 @@ Si no se tiene la versión 11 de OpenJDK previamente instalada, es conveniente i
 
 `tar -xzvf open-jdk11.tar.gz`
 
-`echo "export JAVA_HOME=/home/ramon/jdk-11.0.14.1+1" > ~/.bashrc`
+`echo "export JAVA_HOME=~/jdk-11.0.14.1+1" > ~/.bashrc`
 
 `echo "export PATH=$PATH:$JAVA_HOME/bin" > ~/.bashrc`
 
