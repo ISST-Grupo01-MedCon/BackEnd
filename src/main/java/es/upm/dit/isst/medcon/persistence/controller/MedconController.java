@@ -30,10 +30,18 @@ public class MedconController {
     List<Consulta> readAll(){
         return (List<Consulta>) medconRepository.findAll();
     }
-    //@PostMapping("/consultas/{id}")Para implementar el texto de la consulta ???
-    
-    
-
-
-
+    @GetMapping("/consultas/{id}")
+    ResponseEntity<Consulta> read(@PathVariable String id){
+        return medconRepository.findById(id).map(consulta ->
+            ResponseEntity.ok().body(consulta)
+        ).orElse(new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND));
+    }
+    @PutMapping("/consultas/{id}")
+    ResponseEntity<Consulta> update(@PathVariable String id) {
+        return medconRepository.findById(id).map(consulta ->{
+            consulta.setDescartado(true);
+            return ResponseEntity.ok().body(consulta);
+        }).orElse(new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND));
+    }
+    //@PostMapping("/consultas/{id}")Para implementar el texto de la consulta ??
 }
