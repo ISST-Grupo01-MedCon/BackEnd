@@ -14,22 +14,18 @@ public class Consulta implements Serializable{
     private String medico;
     private String paciente;
     private String razonConsulta;
-    private Boolean registrado;
     @Lob
-    private byte[] textomedico;
     private Boolean descartado;
     private String ticketId;
 
     public Consulta(){}
-    public Consulta(Integer id, String fecha, String medico, String paciente, String razonConsulta, Boolean registrado, byte[] textomedico, String ticketId, Boolean descartado){
+    public Consulta(Integer id, String fecha, String medico, String paciente, String razonConsulta, String ticketId, Boolean descartado){
         this.id = id;
         this.fecha = fecha;
         this.medico = medico;
         this.paciente = paciente;
         this.razonConsulta = razonConsulta;
-        this.registrado = registrado;
         this.descartado = descartado;
-        this.textomedico = textomedico;
         this.ticketId = ticketId;
     }
 
@@ -72,20 +68,6 @@ public class Consulta implements Serializable{
 
     public void setRazonConsulta(String razonConsulta) {
         this.razonConsulta = razonConsulta;
-    }
-    public Boolean getRegistrado(){
-        return this.registrado;
-    }
-    public void setRegistrado(Boolean registrado){
-        this.registrado = registrado;
-    }
-
-    public byte[] getTextomedico() {
-        return this.textomedico;
-    }
-
-    public void setTextomedico(byte[] textomedico) {
-        this.textomedico = textomedico;
     }
     public Boolean getDescartado(){
         return descartado;
