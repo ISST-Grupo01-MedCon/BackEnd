@@ -37,9 +37,17 @@ public class MedconController {
         ).orElse(new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND));
     }
     @PutMapping("/consultas/{id}")
-    ResponseEntity<Consulta> update(@PathVariable String id) {
+    ResponseEntity<Consulta> updatedescartado(@PathVariable String id) {
         return medconRepository.findById(id).map(consulta ->{
             consulta.setDescartado(true);
+            consulta.setTicketId(null);
+            return ResponseEntity.ok().body(consulta);
+        }).orElse(new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND));
+    }
+    @PutMapping("/consultas/descartados/{id}")
+    ResponseEntity<Consulta> updateregistrado(@PathVariable String id) {
+        return medconRepository.findById(id).map(consulta ->{
+            consulta.setDescartado(false);
             return ResponseEntity.ok().body(consulta);
         }).orElse(new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND));
     }
