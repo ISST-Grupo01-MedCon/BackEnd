@@ -38,7 +38,7 @@ Tenemos dos casos dependiendo de la existencia o no del directorio frontend:
 
 * Si no existe el directorio frontend, se puede clonar con:
 
-    `git clone git@github.com:ISST-Grupo01-MedCon/FrontEnd.git frontend`
+    `git clone https://github.com/ISST-Grupo01-MedCon/FrontEnd`
 
   Y, finalmente, iniciar el servidor con:
 
