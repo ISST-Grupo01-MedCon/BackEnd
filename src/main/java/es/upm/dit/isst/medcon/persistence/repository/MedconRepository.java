@@ -9,5 +9,5 @@ import org.springframework.data.repository.CrudRepository;
 import es.upm.dit.isst.medcon.persistence.model.Consulta;
 
 public interface MedconRepository extends CrudRepository<Consulta, String>{
-    List<Consulta> findByPaciente(String tutor);
+    List<Consulta> findByPaciente(String paciente);
 }
