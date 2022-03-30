@@ -18,7 +18,7 @@ else
   #El directorio no existe, por lo que se clona de GitHub
   echo "No se ha encontrado el FrontEnd. Clonando de GitHub..."
   echo "Introduza su nombre de usuario y token si se le solicita:"
-  (git clone https://github.com/ISST-Grupo01-MedCon/FrontEnd &&
+  (git clone https://github.com/ISST-Grupo01-MedCon/FrontEnd frontend &&
   echo "Se clonó el repositorio de GitHub con éxito. Se procede a ejecutar el servidor.") ||
   (echo "Hubo un problema clonando el repositorio del FrontEnd. Se sale del script."; exit 1)
 fi
