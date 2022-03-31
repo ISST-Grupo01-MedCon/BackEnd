@@ -9,7 +9,7 @@ import javax.persistence.Lob;
 public class Consulta implements Serializable{
     
     @Id
-    private Integer id;
+    private String id;
     private String fecha;
     private String medico;
     private String paciente;
@@ -19,7 +19,7 @@ public class Consulta implements Serializable{
     private String ticketId;
 
     public Consulta(){}
-    public Consulta(Integer id, String fecha, String medico, String paciente, String razonConsulta, String ticketId, Boolean descartado){
+    public Consulta(String id, String fecha, String medico, String paciente, String razonConsulta, String ticketId, Boolean descartado){
         this.id = id;
         this.fecha = fecha;
         this.medico = medico;
@@ -30,11 +30,11 @@ public class Consulta implements Serializable{
     }
 
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
