@@ -28,19 +28,19 @@ public class MedconController {
     public static final Logger log = LoggerFactory.getLogger(MedconController.class);
     public MedconController(MedconRepository t, PacientesRepository p){
         this.pacientesRepository = p;
-        this.pacientesRepository.save(new Paciente( 234567890, "45367876F", "María Asunción Santamaría Galdón", new Integer[] {7}));
-        this.pacientesRepository.save(new Paciente( 987656435, "76262816D", "Jesús Frayle Ardanuy", new Integer[] {8}));
-        this.pacientesRepository.save(new Paciente( 234654278, "72698765D", "Víctor Abraham Villagrá González", new Integer[] {9}));
-        this.pacientesRepository.save(new Paciente( 287652288, "98224684F", "Gabriel Huecas Toribio", new Integer[] {10}));
-        this.pacientesRepository.save(new Paciente( 876546892, "54378086E", "María de la Nava Maroto García", new Integer[] {11}));
+        this.pacientesRepository.save(new Paciente( 185672890, "78653477H", "Diego Martín de Andrés", new Integer[] {0}));
+        this.pacientesRepository.save(new Paciente( 225522890, "45435698D", "Marco César Maicas Ramos", new Integer[] {1}));
+        this.pacientesRepository.save(new Paciente( 396756288, "86456774F", "Valentín de la Rubia Hernández", new Integer[] {2}));
+        this.pacientesRepository.save(new Paciente( 489272890, "70454325F", "Mateo Burgos García", new Integer[] {3}));
+        this.pacientesRepository.save(new Paciente( 537283790, "89573369H", "Benito Artaloytia Encinas", new Integer[] {4}));
+        this.pacientesRepository.save(new Paciente( 693872290, "90643568D", "Pablo Sánchez Olivares", new Integer[] {5}));
+        this.pacientesRepository.save(new Paciente( 734333210, "69292286G", "Luis Mendo Tomas", new Integer[] {6}));
+        this.pacientesRepository.save(new Paciente( 834567890, "45367876F", "María Asunción Santamaría Galdón", new Integer[] {7}));
+        this.pacientesRepository.save(new Paciente( 917656435, "76262816D", "Jesús Frayle Ardanuy", new Integer[] {8}));
+        this.pacientesRepository.save(new Paciente( 924654278, "72698765D", "Víctor Abraham Villagrá González", new Integer[] {9}));
+        this.pacientesRepository.save(new Paciente( 937652288, "98224684F", "Gabriel Huecas Toribio", new Integer[] {10}));
+        this.pacientesRepository.save(new Paciente( 946546892, "54378086E", "María de la Nava Maroto García", new Integer[] {11}));
         this.pacientesRepository.save(new Paciente( 987652728, "93214897H", "Juan Carlos Yelmo García", new Integer[] {12}));
-        this.pacientesRepository.save(new Paciente( 896756288, "86456774F", "Valentín de la Rubia Hernández", new Integer[] {2}));
-        this.pacientesRepository.save(new Paciente( 825522890, "45435698D", "Marco César Maicas Ramos", new Integer[] {1}));
-        this.pacientesRepository.save(new Paciente( 985672890, "78653477H", "Diego Martín de Andrés", new Integer[] {0}));
-        this.pacientesRepository.save(new Paciente( 989272890, "70454325F", "Mateo Burgos García", new Integer[] {3}));
-        this.pacientesRepository.save(new Paciente( 637283790, "89573369H", "Benito Artaloytia Encinas", new Integer[] {4}));
-        this.pacientesRepository.save(new Paciente( 293872290, "90643568D", "Pablo Sánchez Olivares", new Integer[] {5}));
-        this.pacientesRepository.save(new Paciente( 234333210, "69292286G", "Luis Mendo Tomas", new Integer[] {6}));
 
         this.medconRepository = t;
         this.medconRepository.save(new Consulta( "7" ,"30/3/2022", "Ramón","María Asunción Santamaría Galdón", "Consultas de prueba","A01", false));
@@ -57,54 +57,89 @@ public class MedconController {
         this.medconRepository.save(new Consulta( "5" ,"30/3/2022", "Ramón","Pablo Sánchez Olivares", "Consultas de prueba","G06", true));
         this.medconRepository.save(new Consulta( "6" ,"30/3/2022", "Ramón","Luis Mendo Tomas", "Consultas de prueba","L89", true));
     }
+    /**
+     * API GET que devuelve la lista completa de consultas con sus atributos.
+     * @return lista completa de consultas.
+     */
     @GetMapping("/consultas")
     List<Consulta> readAll(){
         return (List<Consulta>) medconRepository.findAll();
     }
+
+    /**
+     * API GET que devuelve una consulta concreta por su ID
+     * @param id el campo id de la consulta buscada.
+     * @return la consulta con dicho id si existe.
+     */
     @GetMapping("/consultas/{id}")
     ResponseEntity<Consulta> read(@PathVariable String id){
         return medconRepository.findById(id).map(consulta ->
             ResponseEntity.ok().body(consulta)
         ).orElse(new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND));
     }
+
+    /**
+     * API PUT que permite establecer un paciente como descartado o no descartado.
+     * @param id el campo id de la consulta que se va a cambiar.
+     * @return el código del resultado de la operación.
+     */
     @PutMapping("/consultas/{id}")
     ResponseEntity<Consulta> updatedescartado(@PathVariable String id) {
         Consulta c = medconRepository.findById(id).orElse(new Consulta());
+        if (c.getPaciente() == null || c.getPaciente() == "")
+            return new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND);
         medconRepository.delete(c);
         System.out.println("Consulta:"+c.getId()+","+c.getPaciente()+","+c.getDescartado());
-        c.setDescartado(true);
-        c.setTicketId("");
+        c.setDescartado(c.getDescartado() ? false : true);
         medconRepository.save(c);
         System.out.println("Consulta:"+c.getId()+","+c.getPaciente()+","+c.getDescartado());
-        return new ResponseEntity<Consulta>(HttpStatus.ACCEPTED);
+        return ResponseEntity.ok().body(c);
     }
-    @PutMapping("/consultas/descartados/{id}")
-    ResponseEntity<Consulta> updateregistrado(@PathVariable String id) {
-        return medconRepository.findById(id).map(consulta ->{
-            consulta.setDescartado(false);
-            return ResponseEntity.ok().body(consulta);
-        }).orElse(new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND));
-    }
-    //@PostMapping("/consultas/{id}")Para implementar el texto de la consulta ??
 
+    /**
+     * API GET que devuelve un paciente específico dado su DNI
+     * @param dni el DNI con letra del paciente buscado
+     * @return el paciente buscado si se encuentra.
+     */
     @GetMapping("/paciente/login/dni/{dni}")
-    Paciente readAllPacientesDni( @PathVariable String dni){
+    Paciente readAllPacientesDni( @PathVariable String dni) {
+        System.out.println("DNI: "+dni);
         return (Paciente) pacientesRepository.findByDni(dni);
     }
 
+    /**
+     * API GET que devuelve un paciente específico dado su CIPA
+     * @param cipa el número CIPA del paciente buscado
+     * @return el paciente buscado si se encuentra.
+     */
     @GetMapping("/paciente/login/cipa/{cipa}")
-        Paciente readAllPacientesCipa( @PathVariable Integer cipa){
-    return (Paciente) pacientesRepository.findByCipa(cipa);
+    Paciente readAllPacientesCipa( @PathVariable Integer cipa){
+        System.out.println("CIPA: "+cipa);
+        return (Paciente) pacientesRepository.findByCipa(cipa);
     }
-    //en el frontend tiene que coger para el paciente que le pasamos el id de su consulta (el priemro que este)
+
+    //en el frontend tiene que coger para el paciente que le pasamos el id de su consulta (el primero que este)
     //para hacer la llamada al put del ticketid
+    /**
+     * API PUT que establece el ticketID del paciente con el ID pasado como parámetro a partir de la consulta enviada en el cuerpo de la petición.
+     * @param id el ID de la consulta a la que se quiere asignar un ticketID.
+     * @param newConsulta el objeto consulta que contiene dentro el ticketID deseado
+     * @return el código del resultado de la operación.
+     */
     @PutMapping("/paciente/ticketid/{id}") //pasamos como parametro el id de la consulta
     ResponseEntity<Consulta> ticketid(@PathVariable String id, @RequestBody Consulta newConsulta) {
-        return medconRepository.findById(id).map(consulta ->{
-            consulta.setTicketId(newConsulta.getTicketId());
-            return ResponseEntity.ok().body(consulta);
-        }).orElse(new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND));
+        Consulta c = medconRepository.findById(id).orElse(new Consulta());
+        if (c.getPaciente() == null || c.getPaciente() == "")
+            return new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND);
+        medconRepository.delete(c);
+        c.setTicketId(newConsulta.getTicketId());
+        medconRepository.save(c);
+        return ResponseEntity.ok().body(c);
     }
+    /**
+     * API GET que devuelve la lista completa de pacientes con sus atributos.
+     * @return lista completa de pacientes.
+     */
     @GetMapping("/paciente")
     List<Paciente> readAllpacientes(){
         return (List<Paciente>) pacientesRepository.findAll();
