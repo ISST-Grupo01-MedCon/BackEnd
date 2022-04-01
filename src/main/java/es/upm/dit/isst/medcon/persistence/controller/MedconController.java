@@ -105,4 +105,8 @@ public class MedconController {
             return ResponseEntity.ok().body(consulta);
         }).orElse(new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND));
     }
+    @GetMapping("/paciente")
+    List<Paciente> readAllpacientes(){
+        return (List<Paciente>) pacientesRepository.findAll();
+    }
 }
