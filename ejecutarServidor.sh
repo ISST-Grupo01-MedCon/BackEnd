@@ -7,13 +7,26 @@ DIR="./frontend"
 if [ -d "$DIR" ]; then
   #El directorio existe, no se hace nada
   echo "Se ha encontrado el directorio frontend."
-  echo "Se procede a comprobar si hay cambios nuevos en GitHub y a descargarlos en tal caso."
-  echo "Introduza su nombre de usuario y token si se le solicita:"
-  cd frontend;
-  (git pull origin &&
-  echo "El FrontEnd está actualizado, se procede a ejecutar el servidor.") || 
-  (echo "Hubo un problema obteniendo los últimos cambios del repositorio del FrontEnd. Se sale del script."; exit 1)
-  cd ..;
+  FILE="./frontend/.gitignore"
+  if [ -f "$FILE" ]; then
+    echo "$FILE existe." 
+    echo "Se procede a comprobar si hay cambios nuevos en GitHub y a descargarlos en tal caso."
+    echo "Introduza su nombre de usuario y token si se le solicita:"
+    cd frontend;
+    (git pull origin &&
+    echo "El FrontEnd está actualizado, se procede a ejecutar el servidor.") || 
+    (echo "Hubo un problema obteniendo los últimos cambios del repositorio del FrontEnd. Se sale del script."; exit 1)
+    cd ..;
+  else
+    echo "$FILE no existe."
+    echo "Se procede a clonar y actualizar la carpeta frontend."
+    (git clone https://github.com/ISST-Grupo01-MedCon/FrontEnd frontend2 &&
+    echo "Se clonó el repositorio de GitHub con éxito. Se procede a ejecutar el servidor.") ||
+    (echo "Hubo un problema clonando el repositorio del FrontEnd. Se sale del script."; exit 1)
+    echo "Copiando los archivos del frontend"
+    (cp -r ./frontend2/* ./frontend && cp ./frontend2/.gitignore ./frontend && rm -r -f ./frontend2 && echo "Archivos copiados") ||
+    (echo "Hubo un problema actualizando la carpeta frontend. Se sale del script."; exit 1)
+  fi
 else
   #El directorio no existe, por lo que se clona de GitHub
   echo "No se ha encontrado el FrontEnd. Clonando de GitHub..."
