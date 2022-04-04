@@ -8,7 +8,7 @@ if [ -d "$DIR" ]; then
   #El directorio existe, no se hace nada
   echo "Se ha encontrado el directorio frontend."
   DIR2="./frontend/.git"
-  if [ -f "$DIR2" ]; then
+  if [ -d "$DIR2" ]; then
     echo "$DIR2 existe." 
     echo "Se procede a comprobar si hay cambios nuevos en GitHub y a descargarlos en tal caso."
     echo "Introduza su nombre de usuario y token si se le solicita:"
