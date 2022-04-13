@@ -43,19 +43,19 @@ public class MedconController {
         p.save(new Paciente( 987652728, "93214897H", "Juan Carlos Yelmo García", new Integer[] {12}));
 
         this.medconRepository = t;
-        t.save(new Consulta( "7" ,"30/3/2022", "Ramón","María Asunción Santamaría Galdón", "Consultas de prueba","A01", false));
-        t.save(new Consulta( "8" ,"30/3/2022", "Ramón","Jesús Frayle Ardanuy", "Consultas de prueba","D03", false));
-        t.save(new Consulta( "9" ,"30/3/2022", "Ramón","Víctor Abraham Villagrá González", "Consultas de prueba","H69", false));
-        t.save(new Consulta( "10" ,"30/3/2022", "Ramón","Gabriel Huecas Toribio", "Consultas de prueba","X43", false));
-        t.save(new Consulta( "11" ,"30/3/2022", "Ramón","María de la Nava Maroto García", "Consultas de prueba","B02", false));
-        t.save(new Consulta( "12" ,"30/3/2022", "Ramón","Juan Carlos Yelmo García", "Consultas de prueba","G54", false));
-        t.save(new Consulta( "2" ,"30/3/2022", "Ramón","Valentín de la Rubia Hernández", "Consultas de prueba","F05", true));
-        t.save(new Consulta( "1" ,"30/3/2022", "Ramón","Marco César Maicas Ramos", "Consultas de prueba","P67", true));
-        t.save(new Consulta( "0" ,"30/3/2022", "Ramón","Diego Martín de Andrés", "Consultas de prueba","D03", true));
-        t.save(new Consulta( "3" ,"30/3/2022", "Ramón","Mateo Burgos García", "Consultas de prueba","U98", true));
-        t.save(new Consulta( "4" ,"30/3/2022", "Ramón","Benito Artaloytia Encinas", "Consultas de prueba","K36", true));
-        t.save(new Consulta( "5" ,"30/3/2022", "Ramón","Pablo Sánchez Olivares", "Consultas de prueba","G06", true));
-        t.save(new Consulta( "6" ,"30/3/2022", "Ramón","Luis Mendo Tomas", "Consultas de prueba","L89", true));
+        t.save(new Consulta( "7" ,"30/3/2022", "Ramón","María Asunción Santamaría Galdón", "Consultas de prueba","A01", false, true));
+        t.save(new Consulta( "8" ,"30/3/2022", "Ramón","Jesús Frayle Ardanuy", "Consultas de prueba","D03", false, true));
+        t.save(new Consulta( "9" ,"30/3/2022", "Ramón","Víctor Abraham Villagrá González", "Consultas de prueba","H69", false, true));
+        t.save(new Consulta( "10" ,"30/3/2022", "Ramón","Gabriel Huecas Toribio", "Consultas de prueba","X43", false, true));
+        t.save(new Consulta( "11" ,"30/3/2022", "Ramón","María de la Nava Maroto García", "Consultas de prueba","B02", false, true));
+        t.save(new Consulta( "12" ,"30/3/2022", "Ramón","Juan Carlos Yelmo García", "Consultas de prueba","G54", false, true));
+        t.save(new Consulta( "2" ,"30/3/2022", "Ramón","Valentín de la Rubia Hernández", "Consultas de prueba","F05", true, false));
+        t.save(new Consulta( "1" ,"30/3/2022", "Ramón","Marco César Maicas Ramos", "Consultas de prueba","P67", true, false));
+        t.save(new Consulta( "0" ,"30/3/2022", "Ramón","Diego Martín de Andrés", "Consultas de prueba","D03", true, false));
+        t.save(new Consulta( "3" ,"30/3/2022", "Ramón","Mateo Burgos García", "Consultas de prueba","U98", true, false));
+        t.save(new Consulta( "4" ,"30/3/2022", "Ramón","Benito Artaloytia Encinas", "Consultas de prueba","K36", true, false));
+        t.save(new Consulta( "5" ,"30/3/2022", "Ramón","Pablo Sánchez Olivares", "Consultas de prueba","G06", true, false));
+        t.save(new Consulta( "6" ,"30/3/2022", "Ramón","Luis Mendo Tomas", "Consultas de prueba","L89", true, false));
     }
     /**
      * API GET que devuelve la lista completa de consultas con sus atributos.
@@ -93,6 +93,24 @@ public class MedconController {
         c.setDescartado(c.getDescartado() ? false : true);
         medconRepository.save(c);
         System.out.println("Consulta:"+c.getId()+","+c.getPaciente()+","+c.getDescartado());
+        return ResponseEntity.ok().body(c);
+    }
+
+    /**
+     * API PUT que permite establecer un paciente como llamado o no llamado.
+     * @param id el campo id de la consulta que se va a cambiar.
+     * @return el código del resultado de la operación.
+     */
+    @PutMapping("/consultas/llamada/{id}")
+    ResponseEntity<Consulta> updatellamado(@PathVariable String id) {
+        Consulta c = medconRepository.findById(id).orElse(new Consulta());
+        if (c.getPaciente() == null || c.getPaciente() == "")
+            return new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND);
+        medconRepository.delete(c);
+        System.out.println("Consulta:"+c.getId()+","+c.getPaciente()+", llamado:"+c.getLlamado());
+        c.setLlamado(c.getLlamado() ? false : true);
+        medconRepository.save(c);
+        System.out.println("Consulta:"+c.getId()+","+c.getPaciente()+", llamado: "+c.getLlamado());
         return ResponseEntity.ok().body(c);
     }
 

@@ -11,7 +11,6 @@ public class Medico implements Serializable{
     private String contraseña;
     private String nombre;
 
-
     public Medico(){}
     public Medico(String usuario, String contraseña, String nombre){
         this.usuario = usuario;
