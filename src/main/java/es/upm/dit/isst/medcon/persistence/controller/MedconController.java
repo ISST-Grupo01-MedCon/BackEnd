@@ -43,12 +43,12 @@ public class MedconController {
         p.save(new Paciente( 987652728, "93214897H", "Juan Carlos Yelmo García", new Integer[] {12}));
 
         this.medconRepository = t;
-        t.save(new Consulta( "7" ,"30/3/2022", "Ramón","María Asunción Santamaría Galdón", "Consultas de prueba","A01", false, true));
-        t.save(new Consulta( "8" ,"30/3/2022", "Ramón","Jesús Frayle Ardanuy", "Consultas de prueba","D03", false, true));
-        t.save(new Consulta( "9" ,"30/3/2022", "Ramón","Víctor Abraham Villagrá González", "Consultas de prueba","H69", false, true));
-        t.save(new Consulta( "10" ,"30/3/2022", "Ramón","Gabriel Huecas Toribio", "Consultas de prueba","X43", false, true));
-        t.save(new Consulta( "11" ,"30/3/2022", "Ramón","María de la Nava Maroto García", "Consultas de prueba","B02", false, true));
-        t.save(new Consulta( "12" ,"30/3/2022", "Ramón","Juan Carlos Yelmo García", "Consultas de prueba","G54", false, true));
+        t.save(new Consulta( "7" ,"30/3/2022", "Ramón","María Asunción Santamaría Galdón", "Consultas de prueba","A01", false, false));
+        t.save(new Consulta( "8" ,"30/3/2022", "Ramón","Jesús Frayle Ardanuy", "Consultas de prueba","D03", false, false));
+        t.save(new Consulta( "9" ,"30/3/2022", "Ramón","Víctor Abraham Villagrá González", "Consultas de prueba","H69", false, false));
+        t.save(new Consulta( "10" ,"30/3/2022", "Ramón","Gabriel Huecas Toribio", "Consultas de prueba","X43", false, false));
+        t.save(new Consulta( "11" ,"30/3/2022", "Ramón","María de la Nava Maroto García", "Consultas de prueba","B02", false, false));
+        t.save(new Consulta( "12" ,"30/3/2022", "Ramón","Juan Carlos Yelmo García", "Consultas de prueba","G54", false, false));
         t.save(new Consulta( "2" ,"30/3/2022", "Ramón","Valentín de la Rubia Hernández", "Consultas de prueba","F05", true, false));
         t.save(new Consulta( "1" ,"30/3/2022", "Ramón","Marco César Maicas Ramos", "Consultas de prueba","P67", true, false));
         t.save(new Consulta( "0" ,"30/3/2022", "Ramón","Diego Martín de Andrés", "Consultas de prueba","D03", true, false));
