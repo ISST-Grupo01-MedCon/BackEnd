@@ -10,12 +10,14 @@ public class Medico implements Serializable{
     private String usuario;
     private String contraseña;
     private String nombre;
+    private int[] ordenPacientes;
 
     public Medico(){}
-    public Medico(String usuario, String contraseña, String nombre){
+    public Medico(String usuario, String contraseña, String nombre, int[] ordenPacientes) {
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.nombre = nombre;
+        this.ordenPacientes = ordenPacientes;
     }
 
     public String getUsuario() {
@@ -40,6 +42,14 @@ public class Medico implements Serializable{
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public int[] getOrdenPacientes() {
+        return ordenPacientes;
+    }
+
+    public void setOrdenPacientes(int[] ordenPacientes) {
+        this.ordenPacientes = ordenPacientes;
     }
 
 }
