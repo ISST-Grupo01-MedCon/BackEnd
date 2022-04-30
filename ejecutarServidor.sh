@@ -20,12 +20,12 @@ if [ -d "$DIR" ]; then
   else
     echo "$DIR2 no existe."
     echo "Se procede a clonar y actualizar la carpeta frontend."
-    { git clone https://github.com/ISST-Grupo01-MedCon/FrontEnd frontend2 &&
+    { rm -rf frontend2 && git clone https://github.com/ISST-Grupo01-MedCon/FrontEnd frontend2 &&
     echo "Se clonó el repositorio de GitHub con éxito."; } ||
     { echo "Hubo un problema clonando el repositorio del FrontEnd. Se sale del script."; exit 1; }
     echo "Copiando los archivos del frontend en el directorio correcto."
-    { cp -r ./frontend2/* ./frontend && cp -r ./frontend2/.* ./frontend && rm -rf ./frontend2 && echo "Archivos copiados correctamente. Se procede a ejecutar el servidor."; } ||
-    { echo "Hubo un problema actualizando la carpeta frontend. Se sale del script."; exit 1; }
+    { cp -r ./frontend2/* ./frontend && mv ./frontend2/.git* ./frontend && rm -rf ./frontend2 && echo "Archivos copiados correctamente. Se procede a ejecutar el servidor."; } ||
+    { echo "Hubo un problema actualizando la carpeta frontend. Se sale del script."; rm -rf ./frontend2; exit 1; }
   fi
 else
   #El directorio no existe, por lo que se clona de GitHub
