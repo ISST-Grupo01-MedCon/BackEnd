@@ -16,6 +16,7 @@ public class MedconFrontEndController {
         "/medico/nueva_consulta_paciente/{id}",
         "/medico/recetas_paciente/{id}",
         "/medico/pruebas_paciente/{id}",
+        "/home",
         "/contacto"
     })
     public String getPaginasAutenticadas(HttpServletRequest request) {
@@ -35,11 +36,6 @@ public class MedconFrontEndController {
         "/medico/login"
     })
     public String getPaginasSinAutenticar(HttpServletRequest request) {
-        return "/index.html";
-    }
-
-    @RequestMapping(value = { "/logout" })
-    public String getLogout(HttpServletRequest request) {
         return "/index.html";
     }
 }

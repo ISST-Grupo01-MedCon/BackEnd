@@ -19,9 +19,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
         .authorizeRequests() //Define who can access the resources
 
-        .antMatchers("/static/css/**", "/*.svg", "/*.png", "/*.ico", "/static/*.js", "/", "/index").permitAll()
+        .antMatchers("/static/css/**", "/static/js/**", "/*.svg", "/*.png", "/*.ico", "/*.json", "/*.mp3", "/index.html").permitAll()
         .antMatchers("/paciente/*").permitAll()
         .antMatchers("/sala_de_espera").permitAll()
+        .antMatchers("/").permitAll()
         .antMatchers("/medico/login").permitAll()
 
         .antMatchers("/medico/lista_siguientes_pacientes").hasAnyRole("MEDICO")
@@ -30,12 +31,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers("/medico/detalles_paciente/**").hasAnyRole("MEDICO")
         .antMatchers("/medico/nueva_consulta_paciente/**").hasAnyRole("MEDICO")
         .antMatchers("/medico/recetas_paciente/").hasAnyRole("MEDICO")
-        .and()
-        //.anyRequest().authenticated().and()
-        
-        .formLogin().loginPage("/medico/login").permitAll().and()
-        .logout().permitAll().and()
-        .httpBasic();
+
+        .anyRequest().authenticated().and()
+        .formLogin().loginPage("/medico/login")
+        .loginProcessingUrl("/medico/autenticar").permitAll()
+        .defaultSuccessUrl("/home", true)
+        .and().logout().logoutUrl("/medico/logout")
+        .and().csrf().disable();
     }
 
     /*
