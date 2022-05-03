@@ -1,4 +1,4 @@
-insert into users(username, password, enabled) values ('alumno', '{noop}alumno1', true);
-insert into users(username, password, enabled) values ('profesor', '{noop}profesor1', true);
-insert into authorities(username, authority) values ('alumno', 'ROLE_ALUM');
-insert into authorities(username, authority) values ('profesor', 'ROLE_PROF');
+insert into users(username, password, enabled) values ('medico', '{noop}medico1', true);
+insert into users(username, password, enabled) values ('paciente', '{noop}paciente1', true);
+insert into authorities(username, authority) values ('medico', 'ROLE_MEDICO');
+insert into authorities(username, authority) values ('paciente', 'ROLE_PACIENTE');
