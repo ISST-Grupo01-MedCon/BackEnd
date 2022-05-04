@@ -1,8 +1,8 @@
 package es.upm.dit.isst.medcon.config;
 
-//import javax.sql.DataSource;
+import javax.sql.DataSource;
 
-//import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,6 +14,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Autowired
+    DataSource ds;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -40,25 +43,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and().csrf().disable();
     }
 
-    /*
-    @Autowired
-    DataSource ds;
-    */
-
-    /*
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(ds)
-            .usersByUsernameQuery("select username, password, enabled from users where username=?")
-            .authoritiesByUsernameQuery("select username, authority from authorities where username=?");
-    }
-    */
-
     @Override
     public void configure(WebSecurity web) throws Exception {
         web
             .ignoring()
-            .antMatchers("/h2/**"); 
+            .antMatchers("/h2-console/**"); 
     }
 
     @Bean
@@ -68,9 +57,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-            .withUser("admin").password(passwordEncoder().encode("admin1")).roles("ADMIN").and()
-            .withUser("medico").password(passwordEncoder().encode("medico1")).roles("MEDICO");
+        auth.jdbcAuthentication().dataSource(ds)
+        .usersByUsernameQuery("select usuario as username, contraseña as password, TRUE as enabled from medico where usuario=?")
+        .authoritiesByUsernameQuery("select usuario as username, 'MEDICO' as authority from medico where usuario=?");
     }
 
 }

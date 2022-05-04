@@ -1,4 +1,5 @@
 package es.upm.dit.isst.medcon.persistence.controller;
+import java.util.ArrayList;
 //import java.net.URI;
 //import java.net.URISyntaxException;
 import java.util.List;
@@ -28,6 +29,17 @@ public class MedconController {
     private final MedconRepository medconRepository;
     private final PacientesRepository pacientesRepository;
     private final MedicosRepository medicosRepository;
+    private class PacienteLlamado {
+        public String ticketID;
+        public String id;
+        public String consulta;
+    
+        public PacienteLlamado(String ticketID, String id, String consulta) {
+            this.ticketID = ticketID;
+            this.id = id;
+            this.consulta = consulta;
+        }
+    }
     public static final Logger log = LoggerFactory.getLogger(MedconController.class);
     public MedconController(MedconRepository t, PacientesRepository p, MedicosRepository m){
         this.pacientesRepository = p;
@@ -61,7 +73,7 @@ public class MedconController {
         t.save(new Consulta( "6" ,"30/3/2022", "111222333","Luis Mendo Tomas", "Consultas de prueba","L89", true, false));
 
         this.medicosRepository = m;
-        m.save(new Medico("111222333", "MeEncantaISST", "Ramón", new int[] {7, 8, 9, 10, 11, 12}));
+        m.save(new Medico("111222333", "{noop}MeEncantaISST", "Ramón", "SALA 2", new int[] {7, 8, 9, 10, 11, 12}));
     }
     /**
      * API GET que devuelve la lista completa de consultas con sus atributos.
@@ -176,6 +188,25 @@ public class MedconController {
     List<Paciente> readAllpacientes(){
         return (List<Paciente>) pacientesRepository.findAll();
     }
+    
+   /**
+    * API GET que devuelve la lista de pacientes llamados con los atributos listas para que se rendericen en la pantalla de la sala de espera.
+    * @return lista de pacientes llamados.
+    */
+   @GetMapping("/paciente/llamados")
+   List<PacienteLlamado> readPacientesLlamados() {
+       List<PacienteLlamado> pacientesLlamados = new ArrayList<PacienteLlamado>();
+
+       for (Consulta c : medconRepository.findAll()) {
+           for (Medico m : medicosRepository.findAll()) {
+               if (m.getUsuario() == c.getMedico() && c.getTicketId() != null && c.getTicketId() != "" && c.getLlamado()) {
+                   pacientesLlamados.add(new PacienteLlamado(c.getTicketId(), c.getId(), m.getSalaDeConsulta()));
+               }
+           }
+       }
+
+       return pacientesLlamados;
+   }
 
     /**
      * API GET que devuelve la lista completa de médicos con sus atributos.
