@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 //import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,7 @@ import es.upm.dit.isst.medcon.persistence.model.Consulta;
 import es.upm.dit.isst.medcon.persistence.model.Medico;
 import es.upm.dit.isst.medcon.persistence.model.Paciente;
 
+@CrossOrigin
 @RestController
 public class MedconController {
     private final MedconRepository medconRepository;
@@ -72,8 +74,68 @@ public class MedconController {
         t.save(new Consulta( "5" ,"30/3/2022", "111222333","Pablo Sánchez Olivares", "Consultas de prueba","G06", true, false));
         t.save(new Consulta( "6" ,"30/3/2022", "111222333","Luis Mendo Tomas", "Consultas de prueba","L89", true, false));
 
+        t.save(new Consulta( "13" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Consultas de prueba","A01", false, false));
+        t.save(new Consulta( "14" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Consultas de prueba","D03", false, false));
+        t.save(new Consulta( "15" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Consultas de prueba","H69", false, false));
+        t.save(new Consulta( "16" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Consultas de prueba","X43", false, false));
+        t.save(new Consulta( "17" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Consultas de prueba","B02", false, false));
+        t.save(new Consulta( "18" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Consultas de prueba","G54", false, false));
+        t.save(new Consulta( "19" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Consultas de prueba","F05", true, false));
+        t.save(new Consulta( "20" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Consultas de prueba","P67", true, false));
+        t.save(new Consulta( "21" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Consultas de prueba","D03", true, false));
+        t.save(new Consulta( "22" ,"5/5/2022", "222333444","Mateo Burgos García", "Consultas de prueba","U98", true, false));
+        t.save(new Consulta( "23" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Consultas de prueba","K36", true, false));
+        t.save(new Consulta( "24" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Consultas de prueba","G06", true, false));
+        t.save(new Consulta( "25" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Consultas de prueba","L89", true, false));
+
+        t.save(new Consulta( "26" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Consultas de prueba","A01", false, false));
+        t.save(new Consulta( "27" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Consultas de prueba","D03", false, false));
+        t.save(new Consulta( "28" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Consultas de prueba","H69", false, false));
+        t.save(new Consulta( "29" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Consultas de prueba","X43", false, false));
+        t.save(new Consulta( "30" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Consultas de prueba","B02", false, false));
+        t.save(new Consulta( "31" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Consultas de prueba","G54", false, false));
+        t.save(new Consulta( "32" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Consultas de prueba","F05", true, false));
+        t.save(new Consulta( "33" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Consultas de prueba","P67", true, false));
+        t.save(new Consulta( "34" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Consultas de prueba","D03", true, false));
+        t.save(new Consulta( "35" ,"5/5/2022", "222333444","Mateo Burgos García", "Consultas de prueba","U98", true, false));
+        t.save(new Consulta( "36" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Consultas de prueba","K36", true, false));
+        t.save(new Consulta( "37" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Consultas de prueba","G06", true, false));
+        t.save(new Consulta( "38" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Consultas de prueba","L89", true, false));
+
+        t.save(new Consulta( "39" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Consultas de prueba","A01", false, false));
+        t.save(new Consulta( "40" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Consultas de prueba","D03", false, false));
+        t.save(new Consulta( "41" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Consultas de prueba","H69", false, false));
+        t.save(new Consulta( "42" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Consultas de prueba","X43", false, false));
+        t.save(new Consulta( "43" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Consultas de prueba","B02", false, false));
+        t.save(new Consulta( "44" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Consultas de prueba","G54", false, false));
+        t.save(new Consulta( "45" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Consultas de prueba","F05", true, false));
+        t.save(new Consulta( "46" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Consultas de prueba","P67", true, false));
+        t.save(new Consulta( "47" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Consultas de prueba","D03", true, false));
+        t.save(new Consulta( "48" ,"5/5/2022", "222333444","Mateo Burgos García", "Consultas de prueba","U98", true, false));
+        t.save(new Consulta( "49" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Consultas de prueba","K36", true, false));
+        t.save(new Consulta( "50" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Consultas de prueba","G06", true, false));
+        t.save(new Consulta( "51" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Consultas de prueba","L89", true, false));
+
+        t.save(new Consulta( "52" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Consultas de prueba","A01", false, false));
+        t.save(new Consulta( "53" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Consultas de prueba","D03", false, false));
+        t.save(new Consulta( "54" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Consultas de prueba","H69", false, false));
+        t.save(new Consulta( "55" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Consultas de prueba","X43", false, false));
+        t.save(new Consulta( "56" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Consultas de prueba","B02", false, false));
+        t.save(new Consulta( "57" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Consultas de prueba","G54", false, false));
+        t.save(new Consulta( "58" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Consultas de prueba","F05", true, false));
+        t.save(new Consulta( "59" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Consultas de prueba","P67", true, false));
+        t.save(new Consulta( "60" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Consultas de prueba","D03", true, false));
+        t.save(new Consulta( "61" ,"5/5/2022", "222333444","Mateo Burgos García", "Consultas de prueba","U98", true, false));
+        t.save(new Consulta( "62" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Consultas de prueba","K36", true, false));
+        t.save(new Consulta( "63" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Consultas de prueba","G06", true, false));
+        t.save(new Consulta( "64" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Consultas de prueba","L89", true, false));
+
         this.medicosRepository = m;
         m.save(new Medico("111222333", "{noop}MeEncantaISST", "Ramón", "SALA 2", new int[] {7, 8, 9, 10, 11, 12}));
+        m.save(new Medico("222333444", "{noop}MeEncantaISST", "Elena", "SALA 3", new int[] {14, 13, 15, 18, 16, 17}));
+        m.save(new Medico("333444555", "{noop}MeEncantaISST", "Pedro", "SALA 4", new int[] {26, 27, 28, 29, 30, 31}));
+        m.save(new Medico("444555666", "{noop}MeEncantaISST", "Andrés R.", "SALA 5", new int[] {39, 40, 41, 42, 43, 44}));
+        m.save(new Medico("555666777", "{noop}MeEncantaISST", "Andrés H.", "SALA 6", new int[] {52, 53, 54, 55, 56, 57}));
     }
     /**
      * API GET que devuelve la lista completa de consultas con sus atributos.
@@ -138,28 +200,6 @@ public class MedconController {
         return ResponseEntity.ok().body(c);
     }
 
-    /**
-     * API GET que devuelve un paciente específico dado su DNI
-     * @param dni el DNI con letra del paciente buscado
-     * @return el paciente buscado si se encuentra.
-     */
-    @GetMapping("/paciente/login/dni/{dni}")
-    Paciente readAllPacientesDni( @PathVariable String dni) {
-        System.out.println("DNI: "+dni);
-        return (Paciente) pacientesRepository.findByDni(dni);
-    }
-
-    /**
-     * API GET que devuelve un paciente específico dado su CIPA
-     * @param cipa el número CIPA del paciente buscado
-     * @return el paciente buscado si se encuentra.
-     */
-    @GetMapping("/paciente/login/cipa/{cipa}")
-    Paciente readAllPacientesCipa( @PathVariable Integer cipa){
-        System.out.println("CIPA: "+cipa);
-        return (Paciente) pacientesRepository.findByCipa(cipa);
-    }
-
     //en el frontend tiene que coger para el paciente que le pasamos el id de su consulta (el primero que este)
     //para hacer la llamada al put del ticketid
     /**
@@ -188,25 +228,6 @@ public class MedconController {
     List<Paciente> readAllpacientes(){
         return (List<Paciente>) pacientesRepository.findAll();
     }
-    
-   /**
-    * API GET que devuelve la lista de pacientes llamados con los atributos listas para que se rendericen en la pantalla de la sala de espera.
-    * @return lista de pacientes llamados.
-    */
-   @GetMapping("/paciente/llamados")
-   List<PacienteLlamado> readPacientesLlamados() {
-       List<PacienteLlamado> pacientesLlamados = new ArrayList<PacienteLlamado>();
-
-       for (Consulta c : medconRepository.findAll()) {
-           for (Medico m : medicosRepository.findAll()) {
-               if (m.getUsuario() == c.getMedico() && c.getTicketId() != null && c.getTicketId() != "" && c.getLlamado()) {
-                   pacientesLlamados.add(new PacienteLlamado(c.getTicketId(), c.getId(), m.getSalaDeConsulta()));
-               }
-           }
-       }
-
-       return pacientesLlamados;
-   }
 
     /**
      * API GET que devuelve la lista completa de médicos con sus atributos.
@@ -223,7 +244,7 @@ public class MedconController {
      * @param orden array de enteros que especifica el orden en el que se atenderá a los pacientes del día.
      * @return el código del resultado de la operación.
      */
-    @PutMapping("/medicos/{usuario}") //pasamos como parametro el id de la consulta
+    @PutMapping("/medicos/{usuario}")
     ResponseEntity<Medico> setOrden(@PathVariable String usuario, @RequestBody int[] orden) {
         Medico m = medicosRepository.findById(usuario).orElse(new Medico());
         if (m.getUsuario() == null || m.getUsuario() == "")
