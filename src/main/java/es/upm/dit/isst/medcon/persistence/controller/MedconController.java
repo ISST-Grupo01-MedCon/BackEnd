@@ -45,19 +45,19 @@ public class MedconController {
     public static final Logger log = LoggerFactory.getLogger(MedconController.class);
     public MedconController(MedconRepository t, PacientesRepository p, MedicosRepository m){
         this.pacientesRepository = p;
-        p.save(new Paciente( 185672890, "78653477H", "Diego Martín de Andrés", new Integer[] {0}));
-        p.save(new Paciente( 225522890, "45435698D", "Marco César Maicas Ramos", new Integer[] {1}));
-        p.save(new Paciente( 396756288, "86456774F", "Valentín de la Rubia Hernández", new Integer[] {2}));
-        p.save(new Paciente( 489272890, "70454325F", "Mateo Burgos García", new Integer[] {3}));
-        p.save(new Paciente( 537283790, "89573369H", "Benito Artaloytia Encinas", new Integer[] {4}));
-        p.save(new Paciente( 693872290, "90643568D", "Pablo Sánchez Olivares", new Integer[] {5}));
-        p.save(new Paciente( 734333210, "69292286G", "Luis Mendo Tomas", new Integer[] {6}));
-        p.save(new Paciente( 834567890, "45367876F", "María Asunción Santamaría Galdón", new Integer[] {7}));
-        p.save(new Paciente( 917656435, "76262816D", "Jesús Frayle Ardanuy", new Integer[] {8}));
-        p.save(new Paciente( 924654278, "72698765D", "Víctor Abraham Villagrá González", new Integer[] {9}));
-        p.save(new Paciente( 937652288, "98224684F", "Gabriel Huecas Toribio", new Integer[] {10}));
-        p.save(new Paciente( 946546892, "54378086E", "María de la Nava Maroto García", new Integer[] {11}));
-        p.save(new Paciente( 987652728, "93214897H", "Juan Carlos Yelmo García", new Integer[] {12}));
+        p.save(new Paciente( 185672890, "78653477H", "Diego Martín de Andrés", new Integer[] {0, 21, 34, 47, 60}));
+        p.save(new Paciente( 225522890, "45435698D", "Marco César Maicas Ramos", new Integer[] {1, 20, 33, 46, 59}));
+        p.save(new Paciente( 396756288, "86456774F", "Valentín de la Rubia Hernández", new Integer[] {2, 19, 32, 45, 58}));
+        p.save(new Paciente( 489272890, "70454325F", "Mateo Burgos García", new Integer[] {3, 22, 35, 48, 61}));
+        p.save(new Paciente( 537283790, "89573369H", "Benito Artaloytia Encinas", new Integer[] {4, 23, 36, 49, 62}));
+        p.save(new Paciente( 693872290, "90643568D", "Pablo Sánchez Olivares", new Integer[] {5, 24, 37, 50, 63}));
+        p.save(new Paciente( 734333210, "69292286G", "Luis Mendo Tomas", new Integer[] {6, 25, 38, 51, 64}));
+        p.save(new Paciente( 834567890, "45367876F", "María Asunción Santamaría Galdón", new Integer[] {7, 13, 26, 39, 52}));
+        p.save(new Paciente( 917656435, "76262816D", "Jesús Frayle Ardanuy", new Integer[] {8, 14, 27, 40, 53}));
+        p.save(new Paciente( 924654278, "72698765D", "Víctor Abraham Villagrá González", new Integer[] {9, 15, 28, 41, 54}));
+        p.save(new Paciente( 937652288, "98224684F", "Gabriel Huecas Toribio", new Integer[] {10, 16, 29, 42, 55}));
+        p.save(new Paciente( 946546892, "54378086E", "María de la Nava Maroto García", new Integer[] {11, 17, 30, 43, 56}));
+        p.save(new Paciente( 987652728, "93214897H", "Juan Carlos Yelmo García", new Integer[] {12, 18, 31, 44, 57}));
 
         this.medconRepository = t;
         t.save(new Consulta( "7" ,"30/3/2022", "111222333","María Asunción Santamaría Galdón", "Consultas de prueba","A01", false, false));
