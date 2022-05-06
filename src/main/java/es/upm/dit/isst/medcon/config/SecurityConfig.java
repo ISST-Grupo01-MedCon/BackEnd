@@ -80,7 +80,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(ds)
         .usersByUsernameQuery("select usuario as username, contraseña as password, TRUE as enabled from medico where usuario=?")
-        .authoritiesByUsernameQuery("select usuario as username, 'MEDICO' as authority from medico where usuario=?");
+        .authoritiesByUsernameQuery("select usuario as username, 'ROLE_MEDICO' as authority from medico where usuario=?");
     }
 
 }
