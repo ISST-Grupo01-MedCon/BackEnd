@@ -60,82 +60,82 @@ public class MedconController {
         p.save(new Paciente( 987652728, "93214897H", "Juan Carlos Yelmo García", new Integer[] {12, 18, 31, 44, 57}));
 
         this.medconRepository = t;
-        t.save(new Consulta( "7" ,"30/3/2022", "111222333","María Asunción Santamaría Galdón", "Cardiología","A01", false, false));
-        t.save(new Consulta( "8" ,"30/3/2022", "111222333","Jesús Frayle Ardanuy", "Cardiología","D03", false, false));
-        t.save(new Consulta( "9" ,"30/3/2022", "111222333","Víctor Abraham Villagrá González", "Cardiología","H69", false, false));
-        t.save(new Consulta( "10" ,"30/3/2022", "111222333","Gabriel Huecas Toribio", "Cardiología","X43", false, false));
-        t.save(new Consulta( "11" ,"30/3/2022", "111222333","María de la Nava Maroto García", "Cardiología","B02", false, false));
-        t.save(new Consulta( "12" ,"30/3/2022", "111222333","Juan Carlos Yelmo García", "Cardiología","G54", false, false));
-        t.save(new Consulta( "2" ,"30/3/2022", "111222333","Valentín de la Rubia Hernández", "Cardiología","F05", true, false));
-        t.save(new Consulta( "1" ,"30/3/2022", "111222333","Marco César Maicas Ramos", "Cardiología","P67", true, false));
-        t.save(new Consulta( "0" ,"30/3/2022", "111222333","Diego Martín de Andrés", "Cardiología","D03", true, false));
-        t.save(new Consulta( "3" ,"30/3/2022", "111222333","Mateo Burgos García", "Cardiología","U98", true, false));
-        t.save(new Consulta( "4" ,"30/3/2022", "111222333","Benito Artaloytia Encinas", "Cardiología","K36", true, false));
-        t.save(new Consulta( "5" ,"30/3/2022", "111222333","Pablo Sánchez Olivares", "Cardiología","G06", true, false));
-        t.save(new Consulta( "6" ,"30/3/2022", "111222333","Luis Mendo Tomas", "Cardiología","L89", true, false));
+        t.save(new Consulta( "7" ,"30/3/2022", "111222333","María Asunción Santamaría Galdón", "Brazo roto","A01", false, false));
+        t.save(new Consulta( "8" ,"30/3/2022", "111222333","Jesús Frayle Ardanuy", "Pierna rota","D03", false, false));
+        t.save(new Consulta( "9" ,"30/3/2022", "111222333","Víctor Abraham Villagrá González", "Golpe hombro","H69", false, false));
+        t.save(new Consulta( "10" ,"30/3/2022", "111222333","Gabriel Huecas Toribio", "Dolor muscular","X43", false, false));
+        t.save(new Consulta( "11" ,"30/3/2022", "111222333","María de la Nava Maroto García", "Tibia rota","B02", false, false));
+        t.save(new Consulta( "12" ,"30/3/2022", "111222333","Juan Carlos Yelmo García", "Rotura muscular","G54", false, false));
+        t.save(new Consulta( "2" ,"30/3/2022", "111222333","Valentín de la Rubia Hernández", "Clavicula rota","F05", true, false));
+        t.save(new Consulta( "1" ,"30/3/2022", "111222333","Marco César Maicas Ramos", "Brazo roto","P67", true, false));
+        t.save(new Consulta( "0" ,"30/3/2022", "111222333","Diego Martín de Andrés", "Muñeca rota","D03", true, false));
+        t.save(new Consulta( "3" ,"30/3/2022", "111222333","Mateo Burgos García", "Rotura de falange","U98", true, false));
+        t.save(new Consulta( "4" ,"30/3/2022", "111222333","Benito Artaloytia Encinas", "Costilla rota","K36", true, false));
+        t.save(new Consulta( "5" ,"30/3/2022", "111222333","Pablo Sánchez Olivares", "Tobillo roto","G06", true, false));
+        t.save(new Consulta( "6" ,"30/3/2022", "111222333","Luis Mendo Tomas", "Cirugía","L89", true, false));
 
-        t.save(new Consulta( "13" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Oftalmología","A01", false, false));
-        t.save(new Consulta( "14" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Oftalmología","D03", false, false));
-        t.save(new Consulta( "15" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Oftalmología","H69", false, false));
-        t.save(new Consulta( "16" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Oftalmología","X43", false, false));
-        t.save(new Consulta( "17" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Oftalmología","B02", false, false));
-        t.save(new Consulta( "18" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Oftalmología","G54", false, false));
-        t.save(new Consulta( "19" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Oftalmología","F05", true, false));
-        t.save(new Consulta( "20" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Oftalmología","P67", true, false));
-        t.save(new Consulta( "21" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Oftalmología","D03", true, false));
-        t.save(new Consulta( "22" ,"5/5/2022", "222333444","Mateo Burgos García", "Oftalmología","U98", true, false));
-        t.save(new Consulta( "23" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Oftalmología","K36", true, false));
-        t.save(new Consulta( "24" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Oftalmología","G06", true, false));
-        t.save(new Consulta( "25" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Oftalmología","L89", true, false));
+        t.save(new Consulta( "13" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Cirugía","A01", false, false));
+        t.save(new Consulta( "14" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Revisión","D03", false, false));
+        t.save(new Consulta( "15" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Revisión","H69", false, false));
+        t.save(new Consulta( "16" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Revisión","X43", false, false));
+        t.save(new Consulta( "17" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Revisión","B02", false, false));
+        t.save(new Consulta( "18" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Cirugía","G54", false, false));
+        t.save(new Consulta( "19" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Revisión","F05", true, false));
+        t.save(new Consulta( "20" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Revisión","P67", true, false));
+        t.save(new Consulta( "21" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Cirugía","D03", true, false));
+        t.save(new Consulta( "22" ,"5/5/2022", "222333444","Mateo Burgos García", "Revisión","U98", true, false));
+        t.save(new Consulta( "23" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Revisión","K36", true, false));
+        t.save(new Consulta( "24" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Revisión","G06", true, false));
+        t.save(new Consulta( "25" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Revisión","L89", true, false));
 
-        t.save(new Consulta( "26" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Otorrinolaringología","A01", false, false));
-        t.save(new Consulta( "27" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Otorrinolaringología","D03", false, false));
-        t.save(new Consulta( "28" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Otorrinolaringología","H69", false, false));
-        t.save(new Consulta( "29" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Otorrinolaringología","X43", false, false));
-        t.save(new Consulta( "30" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Otorrinolaringología","B02", false, false));
-        t.save(new Consulta( "31" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Otorrinolaringología","G54", false, false));
-        t.save(new Consulta( "32" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Otorrinolaringología","F05", true, false));
-        t.save(new Consulta( "33" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Otorrinolaringología","P67", true, false));
-        t.save(new Consulta( "34" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Otorrinolaringología","D03", true, false));
-        t.save(new Consulta( "35" ,"5/5/2022", "222333444","Mateo Burgos García", "Otorrinolaringología","U98", true, false));
-        t.save(new Consulta( "36" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Otorrinolaringología","K36", true, false));
-        t.save(new Consulta( "37" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Otorrinolaringología","G06", true, false));
-        t.save(new Consulta( "38" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Otorrinolaringología","L89", true, false));
+        t.save(new Consulta( "26" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Revisión","A01", false, false));
+        t.save(new Consulta( "27" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Revisión","D03", false, false));
+        t.save(new Consulta( "28" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Cirugía","H69", false, false));
+        t.save(new Consulta( "29" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Cirugía","X43", false, false));
+        t.save(new Consulta( "30" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Cirugía","B02", false, false));
+        t.save(new Consulta( "31" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Revisión","G54", false, false));
+        t.save(new Consulta( "32" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Revisión","F05", true, false));
+        t.save(new Consulta( "33" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Revisión","P67", true, false));
+        t.save(new Consulta( "34" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Cirugía","D03", true, false));
+        t.save(new Consulta( "35" ,"5/5/2022", "222333444","Mateo Burgos García", "Revisión","U98", true, false));
+        t.save(new Consulta( "36" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Revisión","K36", true, false));
+        t.save(new Consulta( "37" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Revisión","G06", true, false));
+        t.save(new Consulta( "38" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Revisión","L89", true, false));
 
-        t.save(new Consulta( "39" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Neurología","A01", false, false));
-        t.save(new Consulta( "40" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Neurología","D03", false, false));
-        t.save(new Consulta( "41" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Neurología","H69", false, false));
-        t.save(new Consulta( "42" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Neurología","X43", false, false));
-        t.save(new Consulta( "43" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Neurología","B02", false, false));
-        t.save(new Consulta( "44" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Neurología","G54", false, false));
-        t.save(new Consulta( "45" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Neurología","F05", true, false));
-        t.save(new Consulta( "46" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Neurología","P67", true, false));
-        t.save(new Consulta( "47" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Neurología","D03", true, false));
-        t.save(new Consulta( "48" ,"5/5/2022", "222333444","Mateo Burgos García", "Neurología","U98", true, false));
-        t.save(new Consulta( "49" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Neurología","K36", true, false));
-        t.save(new Consulta( "50" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Neurología","G06", true, false));
-        t.save(new Consulta( "51" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Neurología","L89", true, false));
+        t.save(new Consulta( "39" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Revisión","A01", false, false));
+        t.save(new Consulta( "40" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Revisión","D03", false, false));
+        t.save(new Consulta( "41" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Revisión","H69", false, false));
+        t.save(new Consulta( "42" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Revisión","X43", false, false));
+        t.save(new Consulta( "43" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Revisión","B02", false, false));
+        t.save(new Consulta( "44" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Cirugía","G54", false, false));
+        t.save(new Consulta( "45" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Revisión","F05", true, false));
+        t.save(new Consulta( "46" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Revisión","P67", true, false));
+        t.save(new Consulta( "47" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Revisión","D03", true, false));
+        t.save(new Consulta( "48" ,"5/5/2022", "222333444","Mateo Burgos García", "Revisión","U98", true, false));
+        t.save(new Consulta( "49" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Cirugía","K36", true, false));
+        t.save(new Consulta( "50" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Revisión","G06", true, false));
+        t.save(new Consulta( "51" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Revisión","L89", true, false));
 
-        t.save(new Consulta( "52" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Inmunología","A01", false, false));
-        t.save(new Consulta( "53" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Inmunología","D03", false, false));
-        t.save(new Consulta( "54" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Inmunología","H69", false, false));
-        t.save(new Consulta( "55" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Inmunología","X43", false, false));
-        t.save(new Consulta( "56" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Inmunología","B02", false, false));
-        t.save(new Consulta( "57" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Inmunología","G54", false, false));
-        t.save(new Consulta( "58" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Inmunología","F05", true, false));
-        t.save(new Consulta( "59" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Inmunología","P67", true, false));
-        t.save(new Consulta( "60" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Inmunología","D03", true, false));
-        t.save(new Consulta( "61" ,"5/5/2022", "222333444","Mateo Burgos García", "Inmunología","U98", true, false));
-        t.save(new Consulta( "62" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Inmunología","K36", true, false));
-        t.save(new Consulta( "63" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Inmunología","G06", true, false));
-        t.save(new Consulta( "64" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Inmunología","L89", true, false));
+        t.save(new Consulta( "52" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Revisión","A01", false, false));
+        t.save(new Consulta( "53" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Revisión","D03", false, false));
+        t.save(new Consulta( "54" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Dermatitis","H69", false, false));
+        t.save(new Consulta( "55" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Revisión","X43", false, false));
+        t.save(new Consulta( "56" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Cirugía","B02", false, false));
+        t.save(new Consulta( "57" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Revisión","G54", false, false));
+        t.save(new Consulta( "58" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Revisión","F05", true, false));
+        t.save(new Consulta( "59" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Revisión","P67", true, false));
+        t.save(new Consulta( "60" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Revisión","D03", true, false));
+        t.save(new Consulta( "61" ,"5/5/2022", "222333444","Mateo Burgos García", "Revisión","U98", true, false));
+        t.save(new Consulta( "62" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Revisión","K36", true, false));
+        t.save(new Consulta( "63" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Cirugía","G06", true, false));
+        t.save(new Consulta( "64" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Revisión","L89", true, false));
 
         this.medicosRepository = m;
-        m.save(new Medico("111222333", "{noop}MeEncantaISST", "Ramón", "SALA 2", new int[] {7, 8, 9, 10, 11, 12}));
-        m.save(new Medico("222333444", "{noop}MeEncantaISST", "Elena", "SALA 3", new int[] {14, 13, 15, 18, 16, 17}));
-        m.save(new Medico("333444555", "{noop}MeEncantaISST", "Pedro", "SALA 4", new int[] {26, 27, 28, 29, 30, 31}));
-        m.save(new Medico("444555666", "{noop}MeEncantaISST", "Andrés R.", "SALA 5", new int[] {39, 40, 41, 42, 43, 44}));
-        m.save(new Medico("555666777", "{noop}MeEncantaISST", "Andrés H.", "SALA 6", new int[] {52, 53, 54, 55, 56, 57}));
+        m.save(new Medico("111222333", "{noop}MeEncantaISST", "Ramón", "SALA 2", new int[] {7, 8, 9, 10, 11, 12})); //Traumatologo
+        m.save(new Medico("222333444", "{noop}MeEncantaISST", "Elena", "SALA 3", new int[] {14, 13, 15, 18, 16, 17})); //Oftalmologo
+        m.save(new Medico("333444555", "{noop}MeEncantaISST", "Pedro", "SALA 4", new int[] {26, 27, 28, 29, 30, 31})); //Cardiologo
+        m.save(new Medico("444555666", "{noop}MeEncantaISST", "Andrés R.", "SALA 5", new int[] {39, 40, 41, 42, 43, 44})); //Neurologo
+        m.save(new Medico("555666777", "{noop}MeEncantaISST", "Andrés H.", "SALA 6", new int[] {52, 53, 54, 55, 56, 57})); //Dermatologo
     }
     /**
      * API GET que devuelve la lista completa de consultas con sus atributos.
