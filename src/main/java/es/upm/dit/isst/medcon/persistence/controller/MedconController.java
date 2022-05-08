@@ -1,8 +1,10 @@
 package es.upm.dit.isst.medcon.persistence.controller;
 import java.util.ArrayList;
+import java.util.HashMap;
 //import java.net.URI;
 //import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,17 +33,6 @@ public class MedconController {
     private final MedconRepository medconRepository;
     private final PacientesRepository pacientesRepository;
     private final MedicosRepository medicosRepository;
-    private class PacienteLlamado {
-        public String ticketID;
-        public String id;
-        public String consulta;
-    
-        public PacienteLlamado(String ticketID, String id, String consulta) {
-            this.ticketID = ticketID;
-            this.id = id;
-            this.consulta = consulta;
-        }
-    }
     public static final Logger log = LoggerFactory.getLogger(MedconController.class);
     public MedconController(MedconRepository t, PacientesRepository p, MedicosRepository m){
         this.pacientesRepository = p;
@@ -66,69 +57,69 @@ public class MedconController {
         t.save(new Consulta( "10" ,"30/3/2022", "111222333","Gabriel Huecas Toribio", "Dolor muscular","X43", false, false));
         t.save(new Consulta( "11" ,"30/3/2022", "111222333","María de la Nava Maroto García", "Tibia rota","B02", false, false));
         t.save(new Consulta( "12" ,"30/3/2022", "111222333","Juan Carlos Yelmo García", "Rotura muscular","G54", false, false));
-        t.save(new Consulta( "2" ,"30/3/2022", "111222333","Valentín de la Rubia Hernández", "Clavicula rota","F05", true, false));
+        t.save(new Consulta( "2" ,"30/3/2022", "111222333","Valentín de la Rubia Hernández", "Clavícula rota","F05", true, false));
         t.save(new Consulta( "1" ,"30/3/2022", "111222333","Marco César Maicas Ramos", "Brazo roto","P67", true, false));
-        t.save(new Consulta( "0" ,"30/3/2022", "111222333","Diego Martín de Andrés", "Muñeca rota","D03", true, false));
+        t.save(new Consulta( "0" ,"30/3/2022", "111222333","Diego Martín de Andrés", "Muñeca rota","Z03", true, false));
         t.save(new Consulta( "3" ,"30/3/2022", "111222333","Mateo Burgos García", "Rotura de falange","U98", true, false));
         t.save(new Consulta( "4" ,"30/3/2022", "111222333","Benito Artaloytia Encinas", "Costilla rota","K36", true, false));
         t.save(new Consulta( "5" ,"30/3/2022", "111222333","Pablo Sánchez Olivares", "Tobillo roto","G06", true, false));
         t.save(new Consulta( "6" ,"30/3/2022", "111222333","Luis Mendo Tomas", "Cirugía","L89", true, false));
 
-        t.save(new Consulta( "13" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Cirugía","A01", false, false));
-        t.save(new Consulta( "14" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Revisión","D03", false, false));
-        t.save(new Consulta( "15" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Revisión","H69", false, false));
-        t.save(new Consulta( "16" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Revisión","X43", false, false));
-        t.save(new Consulta( "17" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Revisión","B02", false, false));
-        t.save(new Consulta( "18" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Cirugía","G54", false, false));
-        t.save(new Consulta( "19" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Revisión","F05", true, false));
-        t.save(new Consulta( "20" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Revisión","P67", true, false));
-        t.save(new Consulta( "21" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Cirugía","D03", true, false));
-        t.save(new Consulta( "22" ,"5/5/2022", "222333444","Mateo Burgos García", "Revisión","U98", true, false));
-        t.save(new Consulta( "23" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Revisión","K36", true, false));
-        t.save(new Consulta( "24" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Revisión","G06", true, false));
-        t.save(new Consulta( "25" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Revisión","L89", true, false));
+        t.save(new Consulta( "13" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Cirugía córnea","A02", false, false));
+        t.save(new Consulta( "14" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Revisión vista cansada","D04", false, false));
+        t.save(new Consulta( "15" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Revisión ocular","H70", false, false));
+        t.save(new Consulta( "16" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Revisión ojos irritads","X44", false, false));
+        t.save(new Consulta( "17" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Revisión visión borrosa","B03", false, false));
+        t.save(new Consulta( "18" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Cirugía astigmatismo","G55", false, false));
+        t.save(new Consulta( "19" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Revisión miopía","F06", true, false));
+        t.save(new Consulta( "20" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Revisión gafas","P68", true, false));
+        t.save(new Consulta( "21" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Cirugía iris","Z04", true, false));
+        t.save(new Consulta( "22" ,"5/5/2022", "222333444","Mateo Burgos García", "Revisión lentes","U99", true, false));
+        t.save(new Consulta( "23" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Revisión ojos rojos","K37", true, false));
+        t.save(new Consulta( "24" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Revisión inflamación ocular","G07", true, false));
+        t.save(new Consulta( "25" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Revisión párpados","L90", true, false));
 
-        t.save(new Consulta( "26" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Revisión","A01", false, false));
-        t.save(new Consulta( "27" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Revisión","D03", false, false));
-        t.save(new Consulta( "28" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Cirugía","H69", false, false));
-        t.save(new Consulta( "29" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Cirugía","X43", false, false));
-        t.save(new Consulta( "30" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Cirugía","B02", false, false));
-        t.save(new Consulta( "31" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Revisión","G54", false, false));
-        t.save(new Consulta( "32" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Revisión","F05", true, false));
-        t.save(new Consulta( "33" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Revisión","P67", true, false));
-        t.save(new Consulta( "34" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Cirugía","D03", true, false));
-        t.save(new Consulta( "35" ,"5/5/2022", "222333444","Mateo Burgos García", "Revisión","U98", true, false));
-        t.save(new Consulta( "36" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Revisión","K36", true, false));
-        t.save(new Consulta( "37" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Revisión","G06", true, false));
-        t.save(new Consulta( "38" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Revisión","L89", true, false));
+        t.save(new Consulta( "26" ,"5/5/2022", "333444555","María Asunción Santamaría Galdón", "Revisión arritmia","A03", false, false));
+        t.save(new Consulta( "27" ,"5/5/2022", "333444555","Jesús Frayle Ardanuy", "Revisión pulsaciones","D05", false, false));
+        t.save(new Consulta( "28" ,"5/5/2022", "333444555","Víctor Abraham Villagrá González", "Cirugía ventricular","H71", false, false));
+        t.save(new Consulta( "29" ,"5/5/2022", "333444555","Gabriel Huecas Toribio", "Cirugía stent ","X45", false, false));
+        t.save(new Consulta( "30" ,"5/5/2022", "333444555","María de la Nava Maroto García", "Cirugía cardiaca","B04", false, false));
+        t.save(new Consulta( "31" ,"5/5/2022", "333444555","Juan Carlos Yelmo García", "Revisión baja tensión","G56", false, false));
+        t.save(new Consulta( "32" ,"5/5/2022", "333444555","Valentín de la Rubia Hernández", "Revisión fatiga","F07", true, false));
+        t.save(new Consulta( "33" ,"5/5/2022", "333444555","Marco César Maicas Ramos", "Revisión palpitaciones","P69", true, false));
+        t.save(new Consulta( "34" ,"5/5/2022", "333444555","Diego Martín de Andrés", "Cirugía transplante corazón","Z05", true, false));
+        t.save(new Consulta( "35" ,"5/5/2022", "333444555","Mateo Burgos García", "Revisión taquicardias","U00", true, false));
+        t.save(new Consulta( "36" ,"5/5/2022", "333444555","Benito Artaloytia Encinas", "Revisión fibrilación auricular","K38", true, false));
+        t.save(new Consulta( "37" ,"5/5/2022", "333444555","Pablo Sánchez Olivares", "Revisión soplo","G08", true, false));
+        t.save(new Consulta( "38" ,"5/5/2022", "333444555","Luis Mendo Tomas", "Revisión cardiograma","L91", true, false));
 
-        t.save(new Consulta( "39" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Revisión","A01", false, false));
-        t.save(new Consulta( "40" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Revisión","D03", false, false));
-        t.save(new Consulta( "41" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Revisión","H69", false, false));
-        t.save(new Consulta( "42" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Revisión","X43", false, false));
-        t.save(new Consulta( "43" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Revisión","B02", false, false));
-        t.save(new Consulta( "44" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Cirugía","G54", false, false));
-        t.save(new Consulta( "45" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Revisión","F05", true, false));
-        t.save(new Consulta( "46" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Revisión","P67", true, false));
-        t.save(new Consulta( "47" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Revisión","D03", true, false));
-        t.save(new Consulta( "48" ,"5/5/2022", "222333444","Mateo Burgos García", "Revisión","U98", true, false));
-        t.save(new Consulta( "49" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Cirugía","K36", true, false));
-        t.save(new Consulta( "50" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Revisión","G06", true, false));
-        t.save(new Consulta( "51" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Revisión","L89", true, false));
+        t.save(new Consulta( "39" ,"5/5/2022", "444555666","María Asunción Santamaría Galdón", "Revisión temblores","A04", false, false));
+        t.save(new Consulta( "40" ,"5/5/2022", "444555666","Jesús Frayle Ardanuy", "Revisión ictus","D06", false, false));
+        t.save(new Consulta( "41" ,"5/5/2022", "444555666","Víctor Abraham Villagrá González", "Revisión alzheimer","H72", false, false));
+        t.save(new Consulta( "42" ,"5/5/2022", "444555666","Gabriel Huecas Toribio", "Revisión cefalea","X46", false, false));
+        t.save(new Consulta( "43" ,"5/5/2022", "444555666","María de la Nava Maroto García", "Revisión pérdida de fuerza","B05", false, false));
+        t.save(new Consulta( "44" ,"5/5/2022", "444555666","Juan Carlos Yelmo García", "Cirugía cerebral","G57", false, false));
+        t.save(new Consulta( "45" ,"5/5/2022", "444555666","Valentín de la Rubia Hernández", "Revisión pérdida equilibrio","F08", true, false));
+        t.save(new Consulta( "46" ,"5/5/2022", "444555666","Marco César Maicas Ramos", "Revisión problemas de memoria","P70", true, false));
+        t.save(new Consulta( "47" ,"5/5/2022", "444555666","Diego Martín de Andrés", "Revisión pérdida de concentración","Z06", true, false));
+        t.save(new Consulta( "48" ,"5/5/2022", "444555666","Mateo Burgos García", "Revisión tras ictus","U01", true, false));
+        t.save(new Consulta( "49" ,"5/5/2022", "444555666","Benito Artaloytia Encinas", "Cirugía hernia discal","K39", true, false));
+        t.save(new Consulta( "50" ,"5/5/2022", "444555666","Pablo Sánchez Olivares", "Revisión frecuentes cefaleas","G09", true, false));
+        t.save(new Consulta( "51" ,"5/5/2022", "444555666","Luis Mendo Tomas", "Revisión temblores frecuentes","L92", true, false));
 
-        t.save(new Consulta( "52" ,"5/5/2022", "222333444","María Asunción Santamaría Galdón", "Revisión","A01", false, false));
-        t.save(new Consulta( "53" ,"5/5/2022", "222333444","Jesús Frayle Ardanuy", "Revisión","D03", false, false));
-        t.save(new Consulta( "54" ,"5/5/2022", "222333444","Víctor Abraham Villagrá González", "Dermatitis","H69", false, false));
-        t.save(new Consulta( "55" ,"5/5/2022", "222333444","Gabriel Huecas Toribio", "Revisión","X43", false, false));
-        t.save(new Consulta( "56" ,"5/5/2022", "222333444","María de la Nava Maroto García", "Cirugía","B02", false, false));
-        t.save(new Consulta( "57" ,"5/5/2022", "222333444","Juan Carlos Yelmo García", "Revisión","G54", false, false));
-        t.save(new Consulta( "58" ,"5/5/2022", "222333444","Valentín de la Rubia Hernández", "Revisión","F05", true, false));
-        t.save(new Consulta( "59" ,"5/5/2022", "222333444","Marco César Maicas Ramos", "Revisión","P67", true, false));
-        t.save(new Consulta( "60" ,"5/5/2022", "222333444","Diego Martín de Andrés", "Revisión","D03", true, false));
-        t.save(new Consulta( "61" ,"5/5/2022", "222333444","Mateo Burgos García", "Revisión","U98", true, false));
-        t.save(new Consulta( "62" ,"5/5/2022", "222333444","Benito Artaloytia Encinas", "Revisión","K36", true, false));
-        t.save(new Consulta( "63" ,"5/5/2022", "222333444","Pablo Sánchez Olivares", "Cirugía","G06", true, false));
-        t.save(new Consulta( "64" ,"5/5/2022", "222333444","Luis Mendo Tomas", "Revisión","L89", true, false));
+        t.save(new Consulta( "52" ,"5/5/2022", "555666777","María Asunción Santamaría Galdón", "Revisión lunar sospechoso","A05", false, false));
+        t.save(new Consulta( "53" ,"5/5/2022", "555666777","Jesús Frayle Ardanuy", "Revisión nebus","D07", false, false));
+        t.save(new Consulta( "54" ,"5/5/2022", "555666777","Víctor Abraham Villagrá González", "Dermatitis","H73", false, false));
+        t.save(new Consulta( "55" ,"5/5/2022", "555666777","Gabriel Huecas Toribio", "Revisión hongos","X47", false, false));
+        t.save(new Consulta( "56" ,"5/5/2022", "555666777","María de la Nava Maroto García", "Cirugía extirpación lunar","B06", false, false));
+        t.save(new Consulta( "57" ,"5/5/2022", "555666777","Juan Carlos Yelmo García", "Revisión piel seca","G58", false, false));
+        t.save(new Consulta( "58" ,"5/5/2022", "555666777","Valentín de la Rubia Hernández", "Revisión mancha en torso","F09", true, false));
+        t.save(new Consulta( "59" ,"5/5/2022", "555666777","Marco César Maicas Ramos", "Revisión acné","P71", true, false));
+        t.save(new Consulta( "60" ,"5/5/2022", "555666777","Diego Martín de Andrés", "Revisión dermatitis atópica","Z07", true, false));
+        t.save(new Consulta( "61" ,"5/5/2022", "555666777","Mateo Burgos García", "Revisión psoriasis","U02", true, false));
+        t.save(new Consulta( "62" ,"5/5/2022", "555666777","Benito Artaloytia Encinas", "Revisión urticaria","K40", true, false));
+        t.save(new Consulta( "63" ,"5/5/2022", "555666777","Pablo Sánchez Olivares", "Cirugía extirpación tumor benigno","G10", true, false));
+        t.save(new Consulta( "64" ,"5/5/2022", "555666777","Luis Mendo Tomas", "Revisión quemadura","L93", true, false));
 
         this.medicosRepository = m;
         m.save(new Medico("111222333", "{noop}MeEncantaISST", "Ramón", "SALA 2", new int[] {7, 8, 9, 10, 11, 12})); //Traumatologo
@@ -236,6 +227,63 @@ public class MedconController {
     @GetMapping("/medicos")
     List<Medico> readAllMedicos(){
         return (List<Medico>) medicosRepository.findAll();
+    }
+
+    /**
+     * API GET que devuelve una lista con las relaciones de cada usuario de un médico con la sala de
+     * consulta donde atiende.
+     * @return lista con las relaciones medico.usuario - medico.salaDeConsulta.
+     */
+    @GetMapping("/medicos/medico-consulta")
+    Map<String, String> readMedicoConsulta() {
+        List<Medico> medicos = (List<Medico>) medicosRepository.findAll();
+        Map<String, String> usuarioConsulta = new HashMap<>();
+        for (Medico medico: medicos) {
+            usuarioConsulta.put(medico.getUsuario(), medico.getSalaDeConsulta());
+        }
+        return usuarioConsulta;
+    }
+
+    /**
+     * API PUT que permite registrar la consulta de un paciente sin tener un médico autenticado desde el kiosko.
+     * @param idConsulta el id de la consulta que se desea registrar.
+     * @return la consulta que se ha registrado.
+     */
+    @PutMapping("/paciente/registroKiosko/{idConsulta}")
+    ResponseEntity<Consulta> registrarPacienteKiosko (@PathVariable String idConsulta) {
+        Consulta c = medconRepository.findById(idConsulta).orElse(new Consulta());
+        if (c.getPaciente() == null || c.getPaciente() == "")
+            return new ResponseEntity<Consulta>(HttpStatus.NOT_FOUND);
+        System.out.println("Registrando al paciente "+c.getPaciente()+" en su consulta con id "+c.getId()+" con ticketID "+c.getTicketId());
+        medconRepository.delete(c);
+        c.setDescartado(false);
+        c.setLlamado(false);
+        List<Medico> medicos = (List<Medico>) medicosRepository.findAll();
+        for (Medico medico: medicos) {
+            if (medico.getUsuario() == c.getMedico()) {
+                medicosRepository.delete(medico);
+                int[] ordenPacientesAntiguo = medico.getOrdenPacientes();
+                int[] ordenPacientes = new int[ordenPacientesAntiguo.length + 1];
+                for (int i = 0; i < ordenPacientes.length; i++) {
+                    if (i < ordenPacientesAntiguo.length) {
+                        if (ordenPacientesAntiguo[i] == Integer.parseInt(idConsulta)) {                            
+                            medicosRepository.save(medico);
+                            medconRepository.save(c);
+                            System.out.println("El paciente "+c.getPaciente()+" ya estaba registrado con el médico "+medico.getNombre()+", por lo que no se hace nada más");
+                            return ResponseEntity.ok().body(c);
+                        }
+                        ordenPacientes[i] = ordenPacientesAntiguo[i];
+                    } else
+                        ordenPacientes[i] = Integer.parseInt(idConsulta);
+                }
+                medicosRepository.delete(medico);
+                medico.setOrdenPacientes(ordenPacientes);
+                medicosRepository.save(medico);
+                break;
+            }
+        }
+        medconRepository.save(c);
+        return ResponseEntity.ok().body(c);
     }
 
     /**

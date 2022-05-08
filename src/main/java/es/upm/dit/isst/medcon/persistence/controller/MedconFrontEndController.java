@@ -16,7 +16,6 @@ public class MedconFrontEndController {
         "/medico/nueva_consulta_paciente/{id}",
         "/medico/recetas_paciente/{id}",
         "/medico/pruebas_paciente/{id}",
-        "/home",
         "/contacto"
     })
     public String getPaginasAutenticadas(HttpServletRequest request) {
