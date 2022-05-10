@@ -42,7 +42,7 @@ public class MedconController {
         p.save(new Paciente( 489272890, "70454325F", "Mateo Burgos García", new Integer[] {3, 22, 35, 48, 61}));
         p.save(new Paciente( 537283790, "89573369H", "Benito Artaloytia Encinas", new Integer[] {4, 23, 36, 49, 62}));
         p.save(new Paciente( 693872290, "90643568D", "Pablo Sánchez Olivares", new Integer[] {5, 24, 37, 50, 63}));
-        p.save(new Paciente( 734333210, "69292286G", "Luis Mendo Tomas", new Integer[] {6, 25, 38, 51, 64}));
+        p.save(new Paciente( 734333210, "69292286G", "Pedro Llorente Flores", new Integer[] {6, 25, 38, 51, 64}));
         p.save(new Paciente( 834567890, "45367876F", "María Asunción Santamaría Galdón", new Integer[] {7, 13, 26, 39, 52}));
         p.save(new Paciente( 917656435, "76262816D", "Jesús Frayle Ardanuy", new Integer[] {8, 14, 27, 40, 53}));
         p.save(new Paciente( 924654278, "72698765D", "Víctor Abraham Villagrá González", new Integer[] {9, 15, 28, 41, 54}));
@@ -56,14 +56,14 @@ public class MedconController {
         t.save(new Consulta( "9" ,"30/3/2022", "ramon.hgarcia","Víctor Abraham Villagrá González", "Golpe hombro","H69", false, false));
         t.save(new Consulta( "10" ,"30/3/2022", "ramon.hgarcia","Gabriel Huecas Toribio", "Dolor muscular","X43", false, false));
         t.save(new Consulta( "11" ,"30/3/2022", "ramon.hgarcia","María de la Nava Maroto García", "Tibia rota","B02", false, false));
-        t.save(new Consulta( "12" ,"30/3/2022", "ramon.hgarcia","Juan Carlos Yelmo García", "Rotura muscular","G54", false, false));
+        t.save(new Consulta( "12" ,"30/3/2022", "ramon.hgarcia","Juan Carlos Yelmo García", "Revisión ictus","G54", false, false));
         t.save(new Consulta( "2" ,"30/3/2022", "ramon.hgarcia","Valentín de la Rubia Hernández", "Clavícula rota","F05", true, false));
         t.save(new Consulta( "1" ,"30/3/2022", "ramon.hgarcia","Marco César Maicas Ramos", "Brazo roto","P67", true, false));
         t.save(new Consulta( "0" ,"30/3/2022", "ramon.hgarcia","Diego Martín de Andrés", "Muñeca rota","Z03", true, false));
         t.save(new Consulta( "3" ,"30/3/2022", "ramon.hgarcia","Mateo Burgos García", "Rotura de falange","U98", true, false));
         t.save(new Consulta( "4" ,"30/3/2022", "ramon.hgarcia","Benito Artaloytia Encinas", "Costilla rota","K36", true, false));
         t.save(new Consulta( "5" ,"30/3/2022", "ramon.hgarcia","Pablo Sánchez Olivares", "Tobillo roto","G06", true, false));
-        t.save(new Consulta( "6" ,"30/3/2022", "ramon.hgarcia","Luis Mendo Tomas", "Cirugía","L89", true, false));
+        t.save(new Consulta( "6" ,"30/3/2022", "ramon.hgarcia","Pedro Llorente Flores", "Cirugía","L89", true, false));
 
         t.save(new Consulta( "13" ,"5/5/2022", "e.deljunco","María Asunción Santamaría Galdón", "Cirugía córnea","A02", false, false));
         t.save(new Consulta( "14" ,"5/5/2022", "e.deljunco","Jesús Frayle Ardanuy", "Revisión vista cansada","D04", false, false));
@@ -77,7 +77,7 @@ public class MedconController {
         t.save(new Consulta( "22" ,"5/5/2022", "e.deljunco","Mateo Burgos García", "Revisión lentes","U99", true, false));
         t.save(new Consulta( "23" ,"5/5/2022", "e.deljunco","Benito Artaloytia Encinas", "Revisión ojos rojos","K37", true, false));
         t.save(new Consulta( "24" ,"5/5/2022", "e.deljunco","Pablo Sánchez Olivares", "Revisión inflamación ocular","G07", true, false));
-        t.save(new Consulta( "25" ,"5/5/2022", "e.deljunco","Luis Mendo Tomas", "Revisión párpados","L90", true, false));
+        t.save(new Consulta( "25" ,"5/5/2022", "e.deljunco","Pedro Llorente Flores", "Revisión párpados","L90", true, false));
 
         t.save(new Consulta( "26" ,"5/5/2022", "pedro.llorente","María Asunción Santamaría Galdón", "Revisión arritmia","A03", false, false));
         t.save(new Consulta( "27" ,"5/5/2022", "pedro.llorente","Jesús Frayle Ardanuy", "Revisión pulsaciones","D05", false, false));
@@ -91,7 +91,7 @@ public class MedconController {
         t.save(new Consulta( "35" ,"5/5/2022", "pedro.llorente","Mateo Burgos García", "Revisión taquicardias","U00", true, false));
         t.save(new Consulta( "36" ,"5/5/2022", "pedro.llorente","Benito Artaloytia Encinas", "Revisión fibrilación auricular","K38", true, false));
         t.save(new Consulta( "37" ,"5/5/2022", "pedro.llorente","Pablo Sánchez Olivares", "Revisión soplo","G08", true, false));
-        t.save(new Consulta( "38" ,"5/5/2022", "pedro.llorente","Luis Mendo Tomas", "Revisión cardiograma","L91", true, false));
+        t.save(new Consulta( "38" ,"5/5/2022", "pedro.llorente","Pedro Llorente Flores", "Revisión cardiograma","L91", true, false));
 
         t.save(new Consulta( "39" ,"5/5/2022", "andres.ripoll","María Asunción Santamaría Galdón", "Revisión temblores","A04", false, false));
         t.save(new Consulta( "40" ,"5/5/2022", "andres.ripoll","Jesús Frayle Ardanuy", "Revisión ictus","D06", false, false));
@@ -105,7 +105,7 @@ public class MedconController {
         t.save(new Consulta( "48" ,"5/5/2022", "andres.ripoll","Mateo Burgos García", "Revisión tras ictus","U01", true, false));
         t.save(new Consulta( "49" ,"5/5/2022", "andres.ripoll","Benito Artaloytia Encinas", "Cirugía hernia discal","K39", true, false));
         t.save(new Consulta( "50" ,"5/5/2022", "andres.ripoll","Pablo Sánchez Olivares", "Revisión frecuentes cefaleas","G09", true, false));
-        t.save(new Consulta( "51" ,"5/5/2022", "andres.ripoll","Luis Mendo Tomas", "Revisión temblores frecuentes","L92", true, false));
+        t.save(new Consulta( "51" ,"5/5/2022", "andres.ripoll","Pedro Llorente Flores", "Revisión temblores frecuentes","L92", true, false));
 
         t.save(new Consulta( "52" ,"5/5/2022", "andreshere","María Asunción Santamaría Galdón", "Revisión lunar sospechoso","A05", false, false));
         t.save(new Consulta( "53" ,"5/5/2022", "andreshere","Jesús Frayle Ardanuy", "Revisión nebus","D07", false, false));
@@ -119,7 +119,7 @@ public class MedconController {
         t.save(new Consulta( "61" ,"5/5/2022", "andreshere","Mateo Burgos García", "Revisión psoriasis","U02", true, false));
         t.save(new Consulta( "62" ,"5/5/2022", "andreshere","Benito Artaloytia Encinas", "Revisión urticaria","K40", true, false));
         t.save(new Consulta( "63" ,"5/5/2022", "andreshere","Pablo Sánchez Olivares", "Cirugía extirpación tumor benigno","G10", true, false));
-        t.save(new Consulta( "64" ,"5/5/2022", "andreshere","Luis Mendo Tomas", "Revisión quemadura","L93", true, false));
+        t.save(new Consulta( "64" ,"5/5/2022", "andreshere","Pedro Llorente Flores", "Revisión quemadura","L93", true, false));
 
         this.medicosRepository = m;
         m.save(new Medico("ramon.hgarcia", "{noop}MeEncantaISST", "Ramón", "SALA 2", new int[] {7, 8, 9, 10, 11, 12})); //Traumatologo
