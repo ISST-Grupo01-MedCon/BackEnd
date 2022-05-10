@@ -56,7 +56,7 @@ public class MedconController {
         t.save(new Consulta( "9" ,"30/3/2022", "ramon.hgarcia","Víctor Abraham Villagrá González", "Golpe hombro","H69", false, false));
         t.save(new Consulta( "10" ,"30/3/2022", "ramon.hgarcia","Gabriel Huecas Toribio", "Dolor muscular","X43", false, false));
         t.save(new Consulta( "11" ,"30/3/2022", "ramon.hgarcia","María de la Nava Maroto García", "Tibia rota","B02", false, false));
-        t.save(new Consulta( "12" ,"30/3/2022", "ramon.hgarcia","Juan Carlos Yelmo García", "Revisión ictus","G54", false, false));
+        t.save(new Consulta( "12" ,"30/3/2022", "ramon.hgarcia","Juan Carlos Yelmo García", "Revisión rotura muscular","G54", false, false));
         t.save(new Consulta( "2" ,"30/3/2022", "ramon.hgarcia","Valentín de la Rubia Hernández", "Clavícula rota","F05", true, false));
         t.save(new Consulta( "1" ,"30/3/2022", "ramon.hgarcia","Marco César Maicas Ramos", "Brazo roto","P67", true, false));
         t.save(new Consulta( "0" ,"30/3/2022", "ramon.hgarcia","Diego Martín de Andrés", "Muñeca rota","Z03", true, false));
@@ -68,7 +68,7 @@ public class MedconController {
         t.save(new Consulta( "13" ,"5/5/2022", "e.deljunco","María Asunción Santamaría Galdón", "Cirugía córnea","A02", false, false));
         t.save(new Consulta( "14" ,"5/5/2022", "e.deljunco","Jesús Frayle Ardanuy", "Revisión vista cansada","D04", false, false));
         t.save(new Consulta( "15" ,"5/5/2022", "e.deljunco","Víctor Abraham Villagrá González", "Revisión ocular","H70", false, false));
-        t.save(new Consulta( "16" ,"5/5/2022", "e.deljunco","Gabriel Huecas Toribio", "Revisión ojos irritads","X44", false, false));
+        t.save(new Consulta( "16" ,"5/5/2022", "e.deljunco","Gabriel Huecas Toribio", "Revisión ojos irritados","X44", false, false));
         t.save(new Consulta( "17" ,"5/5/2022", "e.deljunco","María de la Nava Maroto García", "Revisión visión borrosa","B03", false, false));
         t.save(new Consulta( "18" ,"5/5/2022", "e.deljunco","Juan Carlos Yelmo García", "Cirugía astigmatismo","G55", false, false));
         t.save(new Consulta( "19" ,"5/5/2022", "e.deljunco","Valentín de la Rubia Hernández", "Revisión miopía","F06", true, false));
