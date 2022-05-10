@@ -185,9 +185,23 @@ public class MedconController {
             return new ResponseEntity<Consulta>(HttpStatus.BAD_REQUEST);
         medconRepository.delete(c);
         System.out.println("Consulta:"+c.getId()+","+c.getPaciente()+", llamado:"+c.getLlamado());
-        c.setLlamado((valor == null) ? !c.getLlamado() : Boolean.parseBoolean(valor));
+        boolean nuevoValorLlamado = (valor == null) ? !c.getLlamado() : Boolean.parseBoolean(valor);
+        c.setLlamado(nuevoValorLlamado);
         medconRepository.save(c);
         System.out.println("Consulta:"+c.getId()+","+c.getPaciente()+", llamado: "+c.getLlamado());
+        if (nuevoValorLlamado) {
+            // Nos aseguramos de que el resto de consultas del mismo médico no estén llamadas
+            for (Consulta consulta : (List<Consulta>) medconRepository.findAll()) {
+                if (consulta.getLlamado() && (consulta.getMedico() == c.getMedico()) && (consulta.getId() != c.getId())) {
+                    // Ponemos llamado a false en el resto de consultas del mismo médico
+                    medconRepository.delete(consulta);
+                    System.out.println("Consulta:"+consulta.getId()+","+consulta.getPaciente()+", llamado:"+consulta.getLlamado());
+                    consulta.setLlamado(false);
+                    medconRepository.save(consulta);
+                    System.out.println("Consultaa);:"+consulta.getId()+","+consulta.getPaciente()+", llamado:"+consulta.getLlamado());
+                }
+            }
+        }
         return ResponseEntity.ok().body(c);
     }
 
